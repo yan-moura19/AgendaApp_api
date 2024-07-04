@@ -25,6 +25,6 @@ mongoose.connect('mongodb+srv://yangabriel3301:7HOQBaxv9ymi6uvT@cluster0.wg6bcpg
 
 app.use('/api', userRoutes);
 
-app.listen(port, () => {
+app.listen( process.env.PORT || port, () => {
   console.log(`Servidor rodando`);
 });
