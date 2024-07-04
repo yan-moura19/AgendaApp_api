@@ -17,7 +17,6 @@ mongoose.connect('mongodb://localhost:27017/agenda_api', {
 });
 
 app.use('/api', userRoutes);
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+app.listen( process.env.PORT || port, () => {
+  console.log(`Servidor rodando`);
 });
