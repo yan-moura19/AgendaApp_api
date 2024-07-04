@@ -11,7 +11,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(cors())
 
-mongoose.connect('mongodb://localhost:27017/agenda_api', {
+mongoose.connect('mongodb+srv://yangabriel3301:7HOQBaxv9ymi6uvT@cluster0.wg6bcpg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -19,5 +19,5 @@ mongoose.connect('mongodb://localhost:27017/agenda_api', {
 app.use('/api', userRoutes);
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando`);
 });
