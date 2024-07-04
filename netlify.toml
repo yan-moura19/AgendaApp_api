@@ -7,7 +7,8 @@
   status = 200
 
 [build]
-  functions = "functions"
+  command = "node index.js"
+  functions = "index.js"
 
 [[headers]]
   for = "/*"
