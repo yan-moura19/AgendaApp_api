@@ -1,4 +1,4 @@
-// routes/userRoutes.js
+
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
@@ -90,7 +90,7 @@ router.post('/user/events/:email', async (req, res) => {
         return res.status(404).json({ message: 'Usuário não encontrado' });
       }
   
-      // Encontra o evento pelo intervalo de datas original
+      
       const eventToUpdate = user.events.find(e => { 
         return e.start == start && e.end == end;
         
@@ -101,7 +101,7 @@ router.post('/user/events/:email', async (req, res) => {
         return res.status(404).json({ message: 'Evento não encontrado' });
       }
   
-      // Atualiza os dados do evento
+      
       eventToUpdate.title = title;
       
       eventToUpdate.content = content;
@@ -109,7 +109,7 @@ router.post('/user/events/:email', async (req, res) => {
   
       await user.save();
   
-      res.json(eventToUpdate); // Retorna o evento atualizado
+      res.json(eventToUpdate);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
